@@ -1,4 +1,4 @@
-package br.com.ideebox.logico.modelos;
+package com.jopss.logico.modelos;
 
 /**
  * Utilizado dentro da excecao para indicar o erro/validacao gerada.

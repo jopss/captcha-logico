@@ -1,11 +1,11 @@
-package br.com.ideebox.logico;
+package com.jopss.logico;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import br.com.ideebox.logico.exception.CaptchaLogicoException;
-import br.com.ideebox.logico.negocio.ProvedorPerguntas;
-import br.com.ideebox.logico.negocio.util.GerenciadorBase;
+import com.jopss.logico.exception.CaptchaLogicoException;
+import com.jopss.logico.negocio.ProvedorPerguntas;
+import com.jopss.logico.negocio.util.GerenciadorBase;
 
 /**
  * Classe inicializadora do Captcha de Perguntas Logicas.

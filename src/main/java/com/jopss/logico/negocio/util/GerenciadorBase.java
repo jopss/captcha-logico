@@ -1,4 +1,4 @@
-package br.com.ideebox.logico.negocio.util;
+package com.jopss.logico.negocio.util;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -7,8 +7,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import br.com.ideebox.logico.exception.CaptchaLogicoException;
-import br.com.ideebox.logico.modelos.Erro;
+import com.jopss.logico.exception.CaptchaLogicoException;
+import com.jopss.logico.modelos.Erro;
 
 import com.googlecode.flyway.core.Flyway;
 

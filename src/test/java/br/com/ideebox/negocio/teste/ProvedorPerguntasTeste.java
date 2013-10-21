@@ -10,9 +10,9 @@ import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpSession;
 
-import br.com.ideebox.logico.negocio.PerguntaRespostas;
-import br.com.ideebox.logico.negocio.ProvedorPerguntas;
-import br.com.ideebox.logico.negocio.util.GerenciadorBase;
+import com.jopss.logico.negocio.PerguntaRespostas;
+import com.jopss.logico.negocio.ProvedorPerguntas;
+import com.jopss.logico.negocio.util.GerenciadorBase;
 
 public class ProvedorPerguntasTeste {
 

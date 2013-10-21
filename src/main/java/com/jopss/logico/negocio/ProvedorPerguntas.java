@@ -1,4 +1,4 @@
-package br.com.ideebox.logico.negocio;
+package com.jopss.logico.negocio;
 
 import java.util.Collections;
 import java.util.List;
@@ -7,12 +7,12 @@ import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import br.com.ideebox.logico.exception.CaptchaLogicoException;
-import br.com.ideebox.logico.modelos.Erro;
-import br.com.ideebox.logico.modelos.Pergunta;
-import br.com.ideebox.logico.modelos.Resposta;
-import br.com.ideebox.logico.negocio.util.CriptoUtils;
-import br.com.ideebox.logico.negocio.util.GerenciadorBase;
+import com.jopss.logico.exception.CaptchaLogicoException;
+import com.jopss.logico.modelos.Erro;
+import com.jopss.logico.modelos.Pergunta;
+import com.jopss.logico.modelos.Resposta;
+import com.jopss.logico.negocio.util.CriptoUtils;
+import com.jopss.logico.negocio.util.GerenciadorBase;
 
 /**
  * Classe provedora de regras para perguntas e respostas.

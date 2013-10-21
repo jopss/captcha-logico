@@ -1,8 +1,8 @@
-package br.com.ideebox.logico.negocio;
+package com.jopss.logico.negocio;
 
 import java.util.List;
 
-import br.com.ideebox.logico.modelos.Resposta;
+import com.jopss.logico.modelos.Resposta;
 
 /**
  * Classe de dados contendo o texto da pergunta e as respostas a serem exibidos em tela.

@@ -1,4 +1,4 @@
-package br.com.ideebox.logico.negocio.util;
+package com.jopss.logico.negocio.util;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;

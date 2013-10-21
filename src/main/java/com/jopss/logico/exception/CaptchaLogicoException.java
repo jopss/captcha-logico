@@ -1,6 +1,6 @@
-package br.com.ideebox.logico.exception;
+package com.jopss.logico.exception;
 
-import br.com.ideebox.logico.modelos.Erro;
+import com.jopss.logico.modelos.Erro;
 
 /**
  * Excecoes da aplicacao, seja de regras ou validacoes.
