@@ -3,6 +3,8 @@ captcha-logico
 
 API para implementação de um Captcha com perguntas lógicas em português, ao invés de imagens e textos. Isso possibilita a implementação de acessibilidade e melhora a usabilidade do sistema. Será criado em tela uma questão com 4 respostas objetivas, a ser selecionado somente 1 correta.
 
+É utilizado um banco de dados leve interno (hsqldb memory) para retornar a pergunta e respostas.
+
 Uso
 ===
 
@@ -20,7 +22,7 @@ Maven
 Controlador/Serviço
 -------------------
 
-No seu controlador ou serviço web deve carregar a listagem de perguntas:
+No seu controlador ou serviço web você deve carregar uma pergunta e as respostas na requisição:
 
 	CaptchaLogico.carregar(session, request).criarNovaPerguntaRespostas();
 
@@ -28,7 +30,7 @@ Isso irá fazer com que guarde o valor real da resposta em sessão no servidor, 
 
 	CaptchaLogico.carregar(session, request).validarRespostaUsuario( form.getRespostaUsuario() );
 	
-Ao retornar do submite, lembre-se de recarregar os dados da requisição.
+Ao retornar do submit (controlador para a página), lembre-se de recarregar os dados da requisição.
 	
 HTML/JSP
 --------
@@ -43,8 +45,8 @@ E em sua página, posicionar a tag que ira exibir as perguntas:
 
 Os parâmetros possíveis para esta tag são:
 	
-	nameRepostas: Atributo a ser inserido no 'name' de todos os radios de respostas. Normalmente ele deve referenciar algum atributo do 'backend bean' do formulario a receber o valor da resposta selecionada.
-	classDivContent: Classe CSS para estilizacao do div content. Este div esta em volta de todos os componentes.
-	classPergunta: Classe CSS para o paragrado (p) da pergunta. 
-	classSpanRespostas: Classe CSS para o span das respostas. Dentro deste estarão os radios com as respostas.
+* nameRepostas: Atributo a ser inserido no 'name' de todos os radios de respostas. Normalmente ele deve referenciar algum atributo do 'backend bean' do formulario a receber o valor da resposta selecionada.
+* classDivContent: Classe CSS para estilizacao do div content. Este div esta em volta de todos os componentes.
+* classPergunta: Classe CSS para o paragrado (p) da pergunta. 
+* classSpanRespostas: Classe CSS para o span das respostas. Dentro deste estarão os radios com as respostas.
 
