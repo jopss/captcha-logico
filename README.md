@@ -1,7 +1,7 @@
 captcha-logico
 ==============
 
-API para implementação de um Captcha com perguntas lógicas em português.
+API para implementação de um Captcha com perguntas lógicas em português, ao invés de imagens e textos. Isso possibilita a implementação de acessibilidade e melhora a usabilidade do sistema. Será criado em tela uma questão com 4 respostas objetivas, a ser selecionado somente 1 correta.
 
 Uso
 ===
@@ -24,9 +24,11 @@ No seu controlador ou serviço web deve carregar a listagem de perguntas:
 
 	CaptchaLogico.carregar(session, request).criarNovaPerguntaRespostas();
 
-E na requisição da página, verifique a resposta digitada com o valor guardado na sessão com:
+Isso irá fazer com que guarde o valor real da resposta em sessão no servidor, e retorna parâmetros da requisição (escopo de Request) com os valores da pergunta e respostas. Ao retornar no submit da sua página, verifique a resposta digitada com o valor guardado na sessão com:
 
 	CaptchaLogico.carregar(session, request).validarRespostaUsuario(guiaForm.getRespostaCaptcha());
+	
+Ao retornar do submite, lembre-se de recarregar os dados da requisição.
 	
 Tela JSP
 --------
@@ -35,14 +37,14 @@ Em tela deve criar referenciar o diretorio de tags da API no cabeçalho na pági
 
 	<%@ taglib prefix="jopss" tagdir="/WEB-INF/tags/cp-componentes"%>
 	
-E em sua pagina, posicionar a tag que ira exibir as perguntas:
+E em sua página, posicionar a tag que ira exibir as perguntas:
 
 	<jopss:captcha-logico nameRepostas="respostaCaptcha" />
 
-	Os parâmetros possíveis são:
+Os parâmetros possíveis para esta tag são:
 	
-		nameRepostas: Atributo a ser inserido no 'name' de todos os radios de respostas. Normalmente ele deve referenciar algum atributo do 'backend bean' do formulario.
-		classDivContent: Classe CSS para estilizacao do div content. Este div esta em volta de todos os componentes.
-		classPergunta: Classe CSS para o paragrado (p) da pergunta. 
-		classSpanRespostas: Classe CSS para o span das respostas. Dentro deste estarão os radios com as respostas.
+	nameRepostas: Atributo a ser inserido no 'name' de todos os radios de respostas. Normalmente ele deve referenciar algum atributo do 'backend bean' do formulario a receber o valor da resposta selecionada.
+	classDivContent: Classe CSS para estilizacao do div content. Este div esta em volta de todos os componentes.
+	classPergunta: Classe CSS para o paragrado (p) da pergunta. 
+	classSpanRespostas: Classe CSS para o span das respostas. Dentro deste estarão os radios com as respostas.
 

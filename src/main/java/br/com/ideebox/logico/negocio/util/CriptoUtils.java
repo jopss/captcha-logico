@@ -1,24 +1,22 @@
 package br.com.ideebox.logico.negocio.util;
 
-import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
-import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Hex;
+import org.apache.log4j.Logger;
 
 /**
  * Classe responsavel pela criptografia de strings.
  */
 public final class CriptoUtils {
+	
+	private static Logger log = Logger.getLogger(CriptoUtils.class);
 
 	public static String md5Encrypt(String texto) {
 		String encripted = null;
@@ -27,8 +25,8 @@ public final class CriptoUtils {
 			md.update(texto.getBytes());
 			BigInteger hash = new BigInteger(1, md.digest());
 			encripted = hash.toString(16);
-		} catch (NoSuchAlgorithmException ns) {
-			ns.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			log.error(e);
 		}
 		return encripted;
 	}
@@ -46,18 +44,8 @@ public final class CriptoUtils {
 			byte[] crip = ecipher.doFinal(utf8);
 			encod = new String(Hex.encodeHex(crip));
 
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		} catch (NoSuchPaddingException e) {
-			e.printStackTrace();
-		} catch (InvalidKeyException e) {
-			e.printStackTrace();
-		} catch (IllegalBlockSizeException e) {
-			e.printStackTrace();
-		} catch (BadPaddingException e) {
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			log.error(e);
 		}
 
 		return encod;
@@ -76,7 +64,7 @@ public final class CriptoUtils {
 			byte[] utf8 = dcipher.doFinal(dec);
 			decod = new String(utf8, "UTF8");
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(e);
 		}
 
 		return decod;
