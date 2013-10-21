@@ -6,7 +6,7 @@ API para implementação de um Captcha com perguntas lógicas em português, ao 
 Uso
 ===
 
-Para utilizar o Captcha Logico na sua aplicação, basta configurar a dependência maven no seu projeto, utilizar a classe "CaptchaLogico" para carregar e criar as perguntas e referenciar a tag html na página web.
+Para utilizar o Captcha Logico na sua aplicação, basta configurar a dependência maven no seu projeto, utilizar a classe "CaptchaLogico" para carregar, criar as perguntas e referenciar a tag html na página web.
 
 Maven
 -----
@@ -26,11 +26,11 @@ No seu controlador ou serviço web deve carregar a listagem de perguntas:
 
 Isso irá fazer com que guarde o valor real da resposta em sessão no servidor, e retorna parâmetros da requisição (escopo de Request) com os valores da pergunta e respostas. Ao retornar no submit da sua página, verifique a resposta digitada com o valor guardado na sessão com:
 
-	CaptchaLogico.carregar(session, request).validarRespostaUsuario(guiaForm.getRespostaCaptcha());
+	CaptchaLogico.carregar(session, request).validarRespostaUsuario( form.getRespostaUsuario() );
 	
 Ao retornar do submite, lembre-se de recarregar os dados da requisição.
 	
-Tela JSP
+HTML/JSP
 --------
 
 Em tela deve criar referenciar o diretorio de tags da API no cabeçalho na página:
