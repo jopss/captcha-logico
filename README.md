@@ -5,10 +5,16 @@ API para implementação de um Captcha com perguntas lógicas em português, ao 
 
 É utilizado um banco de dados leve interno (hsqldb memory) para retornar a pergunta e respostas.
 
-Uso
-===
+Os fontes foram propositadamente escrito e voltado para português BR.
 
-Para utilizar o Captcha Logico na sua aplicação, basta configurar a dependência maven no seu projeto, utilizar a classe "CaptchaLogico" para carregar, criar as perguntas e referenciar a tag html na página web.
+Quantidade de perguntas diferentes cadastradas: 20.
+
+Licença
+-------
+
+O projeto foi concebido na licença Mozilla 2.0, ou seja, pode-se utilizar o jar em qualquer projeto, comercial ou não. Mas alterações na API devem ser obrigatoriamente disponibilizada na mesma licença.
+
+É OpenSource, e como tal, qualquer um pode melhorar o código, corrigindo ou adicionando novas funcionalidades. Basta dar um fork neste repo.
 
 Maven
 -----
@@ -18,6 +24,11 @@ Maven
 		<artifactId>captcha-logico</artifactId>
 		<version>1.0</version>
 	</dependency>
+	
+Uso
+===
+
+Para utilizar o Captcha Logico na sua aplicação, basta configurar a dependência maven no seu projeto, utilizar a classe "CaptchaLogico" para carregar, criar as perguntas e referenciar a tag html na página web.
 
 Controlador/Serviço
 -------------------
@@ -45,8 +56,12 @@ E em sua página, posicionar a tag que ira exibir as perguntas:
 
 Os parâmetros possíveis para esta tag são:
 	
-* nameRepostas: Atributo a ser inserido no 'name' de todos os radios de respostas. Normalmente ele deve referenciar algum atributo do 'backend bean' do formulario a receber o valor da resposta selecionada.
-* classDivContent: Classe CSS para estilizacao do div content. Este div esta em volta de todos os componentes.
+* nameRadiosRespostas: Atributo a ser inserido no 'name' de todos os radios de respostas. Normalmente ele deve referenciar algum atributo do 'backend bean' do formulario a receber o valor da resposta selecionada.
+* classDivConteudo: Classe CSS para estilizacao do div content. Este div esta em volta de todos os componentes.
 * classPergunta: Classe CSS para o paragrado (p) da pergunta. 
 * classSpanRespostas: Classe CSS para o span das respostas. Dentro deste estarão os radios com as respostas.
 
+Status
+------
+
+Finalizado primeira release. Em manutenção.
