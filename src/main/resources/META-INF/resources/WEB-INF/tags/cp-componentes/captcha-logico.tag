@@ -8,7 +8,7 @@
 <%@ attribute name="classPergunta"					required="false" 	rtexprvalue="true" 	description="Nome da classe CSS para o paragrado (p) da pergunta." %>
 <%@ attribute name="classSpanRespostas"					required="false" 	rtexprvalue="true" 	description="Nome da classe CSS para o span das respostas. Dentro deste estarao os radios com as respostas." %>
 
-<c:set var="perguntaRespostas" value="${requestScope.idee_pergunta_req}"/>
+<c:set var="perguntaRespostas" value="${requestScope.cp_pergunta_req}"/>
 
 <div id="divCaptchaLogico" class="${classDivConteudo}">
 

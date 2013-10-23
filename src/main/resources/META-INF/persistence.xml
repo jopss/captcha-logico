@@ -19,7 +19,7 @@
 			<property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.use_sql_comments" value="false" />
             
-			<!-- Dados de banco estao no arquivo 'idee_captcha_db.properties'. -->
+			<!-- Dados de banco estao no arquivo 'captcha_db.properties'. -->
 		</properties>
 	</persistence-unit>
     
