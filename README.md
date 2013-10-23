@@ -9,6 +9,8 @@ Os fontes foram propositadamente escrito e voltado para português BR.
 
 Quantidade de perguntas diferentes cadastradas: 20.
 
+Encoding: UTF-8.
+
 Licença
 -------
 
@@ -48,12 +50,13 @@ HTML/JSP
 
 Em tela deve criar referenciar o diretorio de tags da API no cabeçalho na página:
 
-	<%@ taglib prefix="jopss" tagdir="/WEB-INF/tags/cp-componentes"%>
+	<%@ taglib prefix="cp-componentes" tagdir="/WEB-INF/tags/cp-componentes"%>
 	
 E em sua página, posicionar a tag que ira exibir as perguntas:
 
-	<jopss:captcha-logico nameRepostas="respostaCaptcha" />
+	<cp-componentes:captcha-logico nameRadiosRespostas="respostaCaptcha" />
 
+O HTML gerado não irá conter nenhum tipo de CSS ou estilo. Cabe a cada projeto gerar o layout adequado.
 Os parâmetros possíveis para esta tag são:
 	
 * nameRadiosRespostas: Atributo a ser inserido no 'name' de todos os radios de respostas. Normalmente ele deve referenciar algum atributo do 'backend bean' do formulario a receber o valor da resposta selecionada.
