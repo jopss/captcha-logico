@@ -25,7 +25,7 @@
     </licenses>
     
     <scm>
-        <connection>https://github.com/jopss/captcha-logico.git</connection>
+        <connection>scm:git:https://github.com/jopss/captcha-logico.git</connection>
         <url>https://github.com/jopss/captcha-logico.git</url>
     </scm>
     
