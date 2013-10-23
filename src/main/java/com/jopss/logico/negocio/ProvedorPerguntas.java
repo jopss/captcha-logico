@@ -1,3 +1,8 @@
+/**
+ * This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. 
+ * If a copy of the MPL was not distributed with this file,
+ * you can obtain one at http://mozilla.org/MPL/2.0/.
+ */
 package com.jopss.logico.negocio;
 
 import java.util.Collections;
@@ -16,6 +21,8 @@ import com.jopss.logico.negocio.util.GerenciadorBase;
 
 /**
  * Classe provedora de regras para perguntas e respostas.
+ * 
+ * @author jopss
  */
 public class ProvedorPerguntas {
 

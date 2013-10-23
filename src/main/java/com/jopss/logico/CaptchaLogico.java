@@ -1,3 +1,8 @@
+/**
+ * This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. 
+ * If a copy of the MPL was not distributed with this file,
+ * you can obtain one at http://mozilla.org/MPL/2.0/.
+ */
 package com.jopss.logico;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +14,8 @@ import com.jopss.logico.negocio.util.GerenciadorBase;
 
 /**
  * Classe inicializadora do Captcha de Perguntas Logicas.
+ * 
+ * @author jopss
  */
 public class CaptchaLogico {
 
