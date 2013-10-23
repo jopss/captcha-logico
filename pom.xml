@@ -26,6 +26,7 @@
     
     <scm>
         <connection>scm:git:git://github.com/jopss/captcha-logico.git</connection>
+        <developerConnection>scm:git:git://github.com/jopss/captcha-logico.git</developerConnection>
         <url>https://github.com/jopss/captcha-logico.git</url>
     </scm>
     
