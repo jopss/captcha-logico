@@ -56,6 +56,7 @@ E em sua página, posicionar a tag que ira exibir as perguntas:
 
 	<cp-componentes:captcha-logico nameRadiosRespostas="respostaCaptcha" />
 
+O HTML gerado não irá conter nenhum tipo de CSS ou estilo. Cabe a cada projeto gerar o layout adequado.
 Os parâmetros possíveis para esta tag são:
 	
 * nameRadiosRespostas: Atributo a ser inserido no 'name' de todos os radios de respostas. Normalmente ele deve referenciar algum atributo do 'backend bean' do formulario a receber o valor da resposta selecionada.
