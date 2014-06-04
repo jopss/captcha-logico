@@ -3,7 +3,7 @@ captcha-logico
 
 API para implementação de um Captcha com perguntas lógicas em português, ao invés de imagens e textos. Isso possibilita a implementação de acessibilidade e melhora a usabilidade do sistema. Será criado em tela uma questão com 4 respostas objetivas, a ser selecionado somente 1 correta.
 
-É utilizado um banco de dados leve interno (hsqldb memory) para retornar a pergunta e respostas.
+É utilizado um banco de dados leve interno (hsqldb memory) para retornar a pergunta e as respostas. As perguntas são carregadas uma única vez neste banco, quando o servidor de aplicação sobe.
 
 Os fontes foram propositadamente escrito e voltado para português BR.
 
