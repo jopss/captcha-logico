@@ -21,6 +21,8 @@ O projeto foi concebido na licença Mozilla 2.0, ou seja, pode-se utilizar o jar
 Maven
 -----
 
+Está publicado no Maven Central. Então basta configurar a dependência conforme abaixo.
+
 	<dependency>
 		<groupId>com.jopss</groupId>
 		<artifactId>captcha-logico</artifactId>
