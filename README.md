@@ -45,7 +45,9 @@ Isso irá fazer com que guarde o valor real da resposta em sessão no servidor, 
 
 	CaptchaLogico.carregar(session, request).validarRespostaUsuario( form.getRespostaUsuario() );
 	
-Ao retornar do submit (controlador para a página), lembre-se de recarregar os dados da requisição.
+Este métod é 'void', e caso a resposta estiver errada, lancará uma 'CaptchaLogicoException' (checked exception). Assim você poderá tratar o erro conforme o seu caso.
+ 
+Ao retornar do submit (controlador para a página), lembre-se de recarregar os dados da requisição com novas perguntas.
 	
 HTML/JSP
 --------
