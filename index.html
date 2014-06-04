@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Captcha Lógico by jopss</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Captcha Lógico</h1>
+        <h2>API para implementação de um &quot;Captcha&quot; com perguntas lógicas em português.</h2>
+        <a href="https://github.com/jopss/captcha-logico" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <p>API para implementação de um "Captcha" com perguntas lógicas em português, ao invés de imagens e textos. Isso possibilita a implementação de acessibilidade e melhoria na usabilidade do sistema. Será criado em tela uma questão com 4 respostas objetivas, com somente 1 correta.</p>
+
+<p>É utilizado um banco de dados leve interno (hsqldb memory) para retornar a pergunta e as respostas. As perguntas são carregadas uma única vez neste banco, quando o servidor de aplicação sobe.</p>
+
+<p>Os fontes foram propositadamente escrito e voltado para português BR.</p>
+
+<p>Quantidade de perguntas diferentes cadastradas: 20.</p>
+
+<p>Encoding: UTF-8.</p>
+
+<h2>
+<a name="licen%C3%A7a" class="anchor" href="#licen%C3%A7a"><span class="octicon octicon-link"></span></a>Licença</h2>
+
+<p>O projeto foi concebido na licença Mozilla 2.0, ou seja, pode-se utilizar o jar em qualquer projeto, comercial ou não. Mas alterações na API devem ser obrigatoriamente disponibilizada na mesma licença.</p>
+
+<p>É OpenSource, e como tal, qualquer um pode melhorar o código, refatorando, corrigindo ou adicionando novas funcionalidades.</p>
+
+<h2>
+<a name="maven" class="anchor" href="#maven"><span class="octicon octicon-link"></span></a>Maven</h2>
+
+<p>Está publicado no Maven Central. Então basta configurar a dependência conforme abaixo.</p>
+
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.jopss&lt;/groupId&gt;
+    &lt;artifactId&gt;captcha-logico&lt;/artifactId&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<h1>
+<a name="uso" class="anchor" href="#uso"><span class="octicon octicon-link"></span></a>Uso</h1>
+
+<p>Para utilizar o Captcha Logico na sua aplicação, basta configurar a dependência maven no seu projeto, utilizar a classe "CaptchaLogico" para carregar, criar as perguntas e referenciar a tag html na página web.</p>
+
+<h2>
+<a name="controladorservi%C3%A7o" class="anchor" href="#controladorservi%C3%A7o"><span class="octicon octicon-link"></span></a>Controlador/Serviço</h2>
+
+<p>No seu controlador ou serviço web você deve carregar uma pergunta e as respostas na requisição:</p>
+
+<pre><code>CaptchaLogico.carregar(session, request).criarNovaPerguntaRespostas();
+</code></pre>
+
+<p>Isso irá fazer com que guarde o valor real da resposta em sessão no servidor, e retorna parâmetros da requisição (escopo de Request) com os valores da pergunta e respostas. Ao retornar no submit da sua página, verifique a resposta digitada com o valor guardado na sessão com:</p>
+
+<pre><code>CaptchaLogico.carregar(session, request).validarRespostaUsuario( form.getRespostaUsuario() );
+</code></pre>
+
+<p>Este métod é 'void', e caso a resposta estiver errada, lancará uma 'CaptchaLogicoException' (checked exception). Assim você poderá tratar o erro conforme o seu caso.</p>
+
+<p>Ao retornar do submit (controlador para a página), lembre-se de recarregar os dados da requisição com novas perguntas.</p>
+
+<h2>
+<a name="htmljsp" class="anchor" href="#htmljsp"><span class="octicon octicon-link"></span></a>HTML/JSP</h2>
+
+<p>Em tela deve criar referenciar o diretorio de tags da API no cabeçalho na página:</p>
+
+<pre><code>&lt;%@ taglib prefix="cp-componentes" tagdir="/WEB-INF/tags/cp-componentes"%&gt;
+</code></pre>
+
+<p>E em sua página, posicionar a tag que ira exibir as perguntas:</p>
+
+<pre><code>&lt;cp-componentes:captcha-logico nameRadiosRespostas="respostaCaptcha" /&gt;
+</code></pre>
+
+<p>O HTML gerado não irá conter nenhum tipo de CSS ou estilo. Cabe a cada projeto gerar o layout adequado.
+Os parâmetros possíveis para esta tag são:</p>
+
+<ul>
+<li>nameRadiosRespostas: Atributo a ser inserido no 'name' de todos os radios de respostas. Normalmente ele deve referenciar algum atributo do 'backend bean' do formulario a receber o valor da resposta selecionada.</li>
+<li>classDivConteudo: Classe CSS para estilizacao do div content. Este div esta em volta de todos os componentes.</li>
+<li>classPergunta: Classe CSS para o paragrado (p) da pergunta. </li>
+<li>classSpanRespostas: Classe CSS para o span das respostas. Dentro deste estarão os radios com as respostas.</li>
+</ul><h2>
+<a name="status" class="anchor" href="#status"><span class="octicon octicon-link"></span></a>Status</h2>
+
+<p>Finalizado primeira release. Em manutenção.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/jopss/captcha-logico/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/jopss/captcha-logico/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/jopss/captcha-logico"></a> is maintained by <a href="https://github.com/jopss">jopss</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
