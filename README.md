@@ -11,6 +11,8 @@ Quantidade de perguntas diferentes cadastradas: 20.
 
 Encoding: UTF-8.
 
+Página: http://jopss.github.io/captcha-logico/
+
 Licença
 -------
 
